@@ -24,22 +24,22 @@ while True:
 
     if user_order == 1:
         # add book to the library
-        book_title = input("What is the Title? \nTitle: ")
-        book_author = input("Who is the Author of the particular book? \nAuthor: ")
+        book_title = input("What is the Title? \nTitle: ").lower()
+        book_author = input("Who is the Author of the particular book? \nAuthor: ").lower()
         book = Book(book_title, book_author)
         library.add_book(book)
 
     elif user_order == 2:
         # borrow book from the library
-        library.borrow_book(input("Which book do you want? \nTitle: "))
+        library.borrow_book(input("Which book do you want? \nTitle: ").lower())
 
     elif user_order == 3:
         # return book to the library
-        library.return_book(input("Which book do you want to return? \nTitle: "))
+        library.return_book(input("Which book do you want to return? \nTitle: ").lower())
 
     elif user_order == 4:
         # search book from the library
-        library.search_book(input("Which book you are looking for? \nTitle: "))
+        library.search_book(input("Which book you are looking for? \nTitle: ").lower())
 
     elif user_order == 5:
         # show all the books of the library
@@ -47,7 +47,8 @@ while True:
 
     elif user_order == 6:
         # Exit
+        print("Exiting... Goodbye!")
         break
 
     else:
-        print("Choose among 1 to 6.")
+        print("Choose a valid option among 1 to 6.")
